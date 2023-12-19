@@ -1,0 +1,19 @@
+# docker-compose file to bring up psql db container
+version: '3.5'
+
+services:
+  postgres:
+    container_name: psql-container 
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres 
+      POSTGRES_PASSWORD: postgres
+      PGDATA: /data/postgres
+    volumes:
+       - postgres:/data/postgres
+    ports:
+      - "5431:5432"
+  
+
+volumes:
+    postgres:

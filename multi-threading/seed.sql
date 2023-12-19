@@ -1,0 +1,1 @@
+-- used to synx example db with random records
