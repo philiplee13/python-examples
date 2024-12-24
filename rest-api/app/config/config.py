@@ -15,8 +15,9 @@ class Config:
             dbname="postgres",
             user="postgres",
             password="postgres",
-            port=5432,
+            port=5431,
             host="localhost",
+            # why do I need this now?
             cursor_factory=RealDictCursor,
         )
         return conn

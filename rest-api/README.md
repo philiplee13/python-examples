@@ -4,6 +4,7 @@
 - CRUD api and models
 - fastapi, pydantic, etc
 - unit tests and integration tests
+- otel for spans
 
 ### To run the app
 
@@ -21,3 +22,4 @@
   fastapi will automatically use `jsonable_encoder()` to encode it for you - docs: https://fastapi.tiangolo.com/tutorial/encoder/
 - but we can return a `Response` directly
   - docs: https://fastapi.tiangolo.com/advanced/response-directly/#returning-a-custom-response
+- getting public ip for osx `ifconfig -u | grep 'inet ' | grep -v 127.0.0.1 | cut -d\  -f2 | head -1`
