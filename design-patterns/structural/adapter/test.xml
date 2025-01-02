@@ -1,0 +1,14 @@
+<notes>
+    <note>
+      <to>Tove</to>
+      <from>Jani</from>
+      <heading>Reminder</heading>
+      <body>Don't forget me this weekend!</body>
+  </note>
+  <note>
+    <to>Test</to>
+    <from>Guest</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the food me this weekend!</body>
+  </note>
+</notes>
