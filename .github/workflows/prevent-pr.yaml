@@ -1,0 +1,25 @@
+name: Check pull request source branch
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - edited
+jobs:
+  check-branches:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branches
+        # if on feature branch -> dev allow
+        # if dev -> main allow
+        # if feature branch -> main block
+        run: |
+          if [ ${{ github.base_ref }} == "dev" ]; then
+            echo "merging ${{ github.head_ref}} to ${{ github.base_ref }} - allowed"
+            exit 0
+          fi
+          if [ ${{ github.head_ref }} != "dev" ] && [ ${{ github.base_ref }} == "main" ]; then
+            echo "Merge requests to main branch are only allowed from dev branch."
+            exit 1
+          fi
