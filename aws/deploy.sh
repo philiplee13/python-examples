@@ -16,8 +16,8 @@
 # eventbridge
 aws events put-rule \
     --name my-custom-rule \
-    # --event-pattern "{\"source\":[\"test\"],\"detail-type\":[\"test-detail-type\"]}, \"detail\":{\"message\":[\"test-value\"]}" \
+    --event-pattern file://test-files/pattern.json
 
-aws events put-targets \
-    --rule my-custom-rule \
-    --targets file://test-files/targets.json
+# aws events put-targets \
+#     --rule my-custom-rule \
+#     --targets file://test-files/targets.json
